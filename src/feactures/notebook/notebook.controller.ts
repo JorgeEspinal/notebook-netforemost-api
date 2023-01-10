@@ -27,7 +27,7 @@ const updateNoteBook = (req: Request, res: Response, _next: NextFunction) => {
           .save()
           .then((dataSave) => res.status(201).json(dataSave))
           .catch((error) => res.status(500).json({ error }));
-      } else res.status(404).json({ message: 'Not found' });
+      } else res.status(404).json({ message: 'Notebbook not found' });
     })
     .catch((error) => res.status(500).json({ error }));
 };
@@ -38,8 +38,8 @@ const deleteNoteBook = (req: Request, res: Response, _next: NextFunction) => {
   return Notebook.findByIdAndDelete(id)
     .then((notebook) =>
       notebook
-        ? res.status(201).json({ message: 'deleted' })
-        : res.status(404).json({ message: 'Not found' })
+        ? res.status(201).json({ message: 'Notebook deleted' })
+        : res.status(404).json({ message: 'Notebbok not found.' })
     )
     .catch((error) => res.status(500).json({ error }));
 };

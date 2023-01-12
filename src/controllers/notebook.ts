@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import Notebook from './notebook.model';
+import Notebook from '../models/notebook';
 
 const createNoteBook = (req: Request, res: Response, _next: NextFunction) => {
   const data = req.body;

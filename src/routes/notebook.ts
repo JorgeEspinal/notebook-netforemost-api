@@ -1,11 +1,11 @@
 import express from 'express';
 import validateResourse from '../middleware/validateResource';
-import controller from '../feactures/notebook/notebook.controller';
+import controller from '../controllers/notebook';
 import {
   idNotebookSchema,
   notebookSchema,
   searchNotebookSchema,
-} from '../feactures/notebook/notebook.schemas';
+} from '../schemas/notebook';
 
 const router = express.Router();
 
